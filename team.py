@@ -23,3 +23,14 @@ def add_task(title, assignee):
 if __name__ == "__main__":
     print("--- Hackathon Team Hub ---")
     add_task("Set up database connection", "Alice")
+def list_tasks():
+    tasks = load_tasks()
+    if not tasks:
+        print("No tasks found.")
+        return
+    for idx, task in enumerate(tasks, 1):
+        print(f"{idx}. {task['title']} - {task['assignee']} [{task['status']}]")
+if __name__ == "__main__":
+    print("--- Hackathon Team Hub ---")
+    add_task("Set up database connection", "Alice")
+    list_tasks()
